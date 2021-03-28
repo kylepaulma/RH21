@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TabController">
+  <tabs>
+    <Tab text="Log">
+      <content>
+        <AnchorPane fx:id="logPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BorderPane layoutX="186.0" layoutY="106.0" prefHeight="400.0" prefWidth="572.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="colDate" onEditCommit="#changeDateCol" prefWidth="75.0" text="Date" />
+                            <TableColumn fx:id="colType" onEditCommit="#changenameCol" prefWidth="74.0" text="Type" />
+                              <TableColumn fx:id="colTime" prefWidth="74.0" text="Time" />
+                              <TableColumn fx:id="colEvent" onEditCommit="#changeTimeCol" prefWidth="343.0" text="Name" />
+                          </columns>
+                        </TableView>
+                     </center>
+                     <top>
+                        <Label text="Event List" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </top>
+                     <bottom>
+                        <VBox prefHeight="67.0" prefWidth="572.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="dateTF" promptText="Date" />
+                                    <TextField fx:id="eventTypeTF" promptText="Event Type" />
+                                    <TextField fx:id="timeTF" promptText="Time" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="nameTF" prefHeight="27.0" prefWidth="289.0" promptText="Name" />
+                                    <Button fx:id="addButton" mnemonicParsing="false" onAction="#addEvent" text="Add Event" />
+                                    <Button fx:id="delButton" mnemonicParsing="false" onAction="#delEvent" text="Delete Event" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </bottom></BorderPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Calendar">
+      <content>
+        <AnchorPane fx:id="calPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <DatePicker fx:id="datePicker" editable="false" layoutX="189.0" layoutY="136.0" onAction="#displayInfo" />
+                  <TextArea fx:id="calBox" layoutX="184.0" layoutY="219.0" prefHeight="98.0" prefWidth="200.0" />
+                  <Label layoutX="238.0" layoutY="53.0" text="Calendar">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Settings">
+        <content>
+          <AnchorPane fx:id="setPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="backButton" layoutX="350.0" layoutY="268.0" mnemonicParsing="false" onAction="#goToTitle" text="Back to Title/Reminders" />
+                  <ColorPicker fx:id="colorPicker" layoutX="62.0" layoutY="97.0" prefHeight="27.0" prefWidth="127.0" />
+                  <Label layoutX="64.0" layoutY="80.0" text="Background Color" />
+                  <ChoiceBox fx:id="choiceBox" layoutX="61.0" layoutY="187.0" prefHeight="27.0" prefWidth="128.0" value="Week" />
+                  <Button fx:id="button1" layoutX="61.0" layoutY="268.0" mnemonicParsing="false" onAction="#applySettings" text="Apply" />
+                  <Label layoutX="61.0" layoutY="170.0" text="Show Logs For" />
+                  <Label layoutX="242.0" layoutY="9.0" text="Settings">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="settingsStatus" layoutX="125.0" layoutY="273.0" prefHeight="17.0" prefWidth="57.0" />
+                  <Label layoutX="388.0" layoutY="113.0" text="Made By:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="388.0" layoutY="150.0" prefHeight="74.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Fonzy Cardona">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Kyle Paulma">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

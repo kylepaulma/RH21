@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.titleController">
+   <children>
+      <Label layoutX="56.0" layoutY="124.0" text="Student Planner">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button contentDisplay="CENTER" layoutX="121.0" layoutY="243.0" mnemonicParsing="false" onAction="#goToMain" text="Click to Continue" />
+      <Label layoutX="373.0" layoutY="79.0" text="Reminders">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <VBox layoutX="324.0" layoutY="109.0" prefHeight="230.0" prefWidth="211.0">
+         <children>
+            <ListView fx:id="listView" prefHeight="239.0" prefWidth="211.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
